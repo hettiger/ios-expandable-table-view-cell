@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		5BD1FCCE23BCC96800E1CBB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCCD23BCC96800E1CBB4 /* AppDelegate.swift */; };
 		5BD1FCD023BCC96800E1CBB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCCF23BCC96800E1CBB4 /* SceneDelegate.swift */; };
-		5BD1FCD223BCC96800E1CBB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCD123BCC96800E1CBB4 /* ViewController.swift */; };
 		5BD1FCD523BCC96800E1CBB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD1FCD323BCC96800E1CBB4 /* Main.storyboard */; };
 		5BD1FCD723BCC96A00E1CBB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD1FCD623BCC96A00E1CBB4 /* Assets.xcassets */; };
 		5BD1FCDA23BCC96A00E1CBB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD1FCD823BCC96A00E1CBB4 /* LaunchScreen.storyboard */; };
+		5BD1FCE623BCCB3600E1CBB4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCE523BCCB3600E1CBB4 /* TableViewController.swift */; };
+		5BD1FCE823BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCE723BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5BD1FCCA23BCC96800E1CBB4 /* Expandable Table View Cell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expandable Table View Cell.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD1FCCD23BCC96800E1CBB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BD1FCCF23BCC96800E1CBB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5BD1FCD123BCC96800E1CBB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5BD1FCD423BCC96800E1CBB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5BD1FCD623BCC96A00E1CBB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BD1FCD923BCC96A00E1CBB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BD1FCDB23BCC96A00E1CBB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BD1FCE523BCCB3600E1CBB4 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		5BD1FCE723BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +78,7 @@
 		5BD1FCE223BCC99500E1CBB4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5BD1FCD123BCC96800E1CBB4 /* ViewController.swift */,
+				5BD1FCE523BCCB3600E1CBB4 /* TableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -86,6 +88,7 @@
 			children = (
 				5BD1FCD323BCC96800E1CBB4 /* Main.storyboard */,
 				5BD1FCD823BCC96A00E1CBB4 /* LaunchScreen.storyboard */,
+				5BD1FCE723BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,9 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BD1FCD223BCC96800E1CBB4 /* ViewController.swift in Sources */,
 				5BD1FCCE23BCC96800E1CBB4 /* AppDelegate.swift in Sources */,
+				5BD1FCE623BCCB3600E1CBB4 /* TableViewController.swift in Sources */,
 				5BD1FCD023BCC96800E1CBB4 /* SceneDelegate.swift in Sources */,
+				5BD1FCE823BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
