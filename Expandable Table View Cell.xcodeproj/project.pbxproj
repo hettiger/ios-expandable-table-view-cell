@@ -15,6 +15,7 @@
 		5BD1FCE623BCCB3600E1CBB4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCE523BCCB3600E1CBB4 /* TableViewController.swift */; };
 		5BD1FCE823BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCE723BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift */; };
 		5BD1FCED23BCEE0B00E1CBB4 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCEC23BCEE0B00E1CBB4 /* Appointment.swift */; };
+		5BD1FCEF23BD2FBF00E1CBB4 /* HairlineConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCEE23BD2FBF00E1CBB4 /* HairlineConstraint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5BD1FCE523BCCB3600E1CBB4 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		5BD1FCE723BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCell.swift; sourceTree = "<group>"; };
 		5BD1FCEC23BCEE0B00E1CBB4 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		5BD1FCEE23BD2FBF00E1CBB4 /* HairlineConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairlineConstraint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				5BD1FCD323BCC96800E1CBB4 /* Main.storyboard */,
 				5BD1FCD823BCC96A00E1CBB4 /* LaunchScreen.storyboard */,
 				5BD1FCE723BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift */,
+				5BD1FCEE23BD2FBF00E1CBB4 /* HairlineConstraint.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				5BD1FCE623BCCB3600E1CBB4 /* TableViewController.swift in Sources */,
 				5BD1FCD023BCC96800E1CBB4 /* SceneDelegate.swift in Sources */,
 				5BD1FCE823BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift in Sources */,
+				5BD1FCEF23BD2FBF00E1CBB4 /* HairlineConstraint.swift in Sources */,
 				5BD1FCED23BCEE0B00E1CBB4 /* Appointment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

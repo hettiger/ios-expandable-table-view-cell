@@ -51,6 +51,7 @@ class TableViewController: UIViewController {
         if let cell = cell as? ExpandableTableViewCell {
             let animatedConfiguration = {
                 cell.valueLabel.alpha = row.isEditing ? 0 : 1
+                cell.separatorView.alpha = row.isEditing ? 1 : 0
                 cell.datePickerView.alpha = row.isEditing ? 1 : 0
                 cell.datePickerWrapperViewHeight.constant = row.isEditing ? cell.datePickerViewHeight.constant : 0
             }

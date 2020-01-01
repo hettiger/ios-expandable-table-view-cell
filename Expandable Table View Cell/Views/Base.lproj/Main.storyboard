@@ -26,7 +26,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KVt-t8-kAe">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="259.5"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BCf-A4-j19">
+                                                <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BCf-A4-j19" userLabel="Label Wrapper View">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2sB-Ph-x3D">
@@ -56,9 +56,16 @@
                                                         <constraint firstItem="2sB-Ph-x3D" firstAttribute="bottom" secondItem="BCf-A4-j19" secondAttribute="bottomMargin" priority="250" id="kzS-8d-zXt"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDq-sy-SBC" userLabel="Date Picker Wrapper View">
+                                                <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yDq-sy-SBC" userLabel="Date Picker Wrapper View">
                                                     <rect key="frame" x="0.0" y="43.5" width="414" height="216"/>
                                                     <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBk-hK-afn" userLabel="Separator View">
+                                                            <rect key="frame" x="20" y="0.0" width="394" height="1"/>
+                                                            <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="1" id="pop-5f-gJq" customClass="HairlineConstraint" customModule="Expandable_Table_View_Cell" customModuleProvider="target"/>
+                                                            </constraints>
+                                                        </view>
                                                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="a1w-s0-FYg">
                                                             <rect key="frame" x="47" y="0.0" width="320" height="216"/>
                                                             <constraints>
@@ -68,10 +75,13 @@
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="KBk-hK-afn" secondAttribute="trailing" id="0JZ-MT-zGP"/>
                                                         <constraint firstItem="a1w-s0-FYg" firstAttribute="centerY" secondItem="yDq-sy-SBC" secondAttribute="centerY" id="9zR-ou-Xl6"/>
+                                                        <constraint firstItem="KBk-hK-afn" firstAttribute="leading" secondItem="yDq-sy-SBC" secondAttribute="leadingMargin" id="Hqw-zj-tvq"/>
                                                         <constraint firstAttribute="height" priority="750" constant="216" id="XCc-GF-JSZ"/>
                                                         <constraint firstItem="a1w-s0-FYg" firstAttribute="width" secondItem="yDq-sy-SBC" secondAttribute="width" multiplier="0.772947" id="dhx-lw-j1C"/>
                                                         <constraint firstItem="a1w-s0-FYg" firstAttribute="centerX" secondItem="yDq-sy-SBC" secondAttribute="centerX" id="ecc-fS-iag"/>
+                                                        <constraint firstItem="KBk-hK-afn" firstAttribute="top" secondItem="yDq-sy-SBC" secondAttribute="top" id="y6Y-8w-TvH"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -88,6 +98,7 @@
                                     <outlet property="datePickerView" destination="a1w-s0-FYg" id="Q8L-N1-DlJ"/>
                                     <outlet property="datePickerViewHeight" destination="zRJ-6Y-Q7j" id="3oz-MN-E56"/>
                                     <outlet property="datePickerWrapperViewHeight" destination="XCc-GF-JSZ" id="QAP-hw-i6J"/>
+                                    <outlet property="separatorView" destination="KBk-hK-afn" id="Kuh-cV-6Ez"/>
                                     <outlet property="titleLabel" destination="dAb-q8-bkD" id="OuH-d4-sub"/>
                                     <outlet property="valueLabel" destination="Uy4-Na-QEc" id="yUT-HR-ITk"/>
                                 </connections>

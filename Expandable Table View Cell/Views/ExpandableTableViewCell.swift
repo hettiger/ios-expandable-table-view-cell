@@ -23,6 +23,12 @@ class ExpandableTableViewCell: UITableViewCell {
 
     @IBOutlet weak var datePickerViewHeight: NSLayoutConstraint!
 
+    @IBOutlet weak var separatorView: UIView! {
+        didSet {
+            separatorView.alpha = 0
+        }
+    }
+
     @IBOutlet weak var datePickerView: UIDatePicker! {
         didSet {
             datePickerView.isEnabled = false
