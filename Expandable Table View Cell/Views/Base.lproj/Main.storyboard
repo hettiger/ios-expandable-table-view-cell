@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xf7-YA-lbk">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,12 +16,62 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Expandable Cell" id="g4F-uf-yEW" customClass="ExpandableTableViewCell" customModule="Expandable_Table_View_Cell" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="259.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g4F-uf-yEW" id="4o2-gL-YVC">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="259.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KVt-t8-kAe">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="259.5"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BCf-A4-j19">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sB-Ph-x3D">
+                                                            <rect key="frame" x="20" y="11" width="374" height="24"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAb-q8-bkD">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="332" height="24"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uy4-Na-QEc">
+                                                                    <rect key="frame" x="332" y="0.0" width="42" height="24"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="2sB-Ph-x3D" firstAttribute="trailing" secondItem="BCf-A4-j19" secondAttribute="trailingMargin" id="9gC-6u-YmZ"/>
+                                                        <constraint firstItem="2sB-Ph-x3D" firstAttribute="top" secondItem="BCf-A4-j19" secondAttribute="topMargin" id="K4Z-ta-pGP"/>
+                                                        <constraint firstAttribute="height" priority="750" constant="43" id="bER-lc-XCg"/>
+                                                        <constraint firstItem="2sB-Ph-x3D" firstAttribute="leading" secondItem="BCf-A4-j19" secondAttribute="leadingMargin" id="ikK-oV-WBr"/>
+                                                        <constraint firstItem="2sB-Ph-x3D" firstAttribute="bottom" secondItem="BCf-A4-j19" secondAttribute="bottomMargin" id="kzS-8d-zXt"/>
+                                                    </constraints>
+                                                </view>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dlp-M9-bV7">
+                                                    <rect key="frame" x="0.0" y="43" width="414" height="216.5"/>
+                                                </pickerView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KVt-t8-kAe" firstAttribute="top" secondItem="4o2-gL-YVC" secondAttribute="top" id="1dF-wY-78c"/>
+                                        <constraint firstAttribute="trailing" secondItem="KVt-t8-kAe" secondAttribute="trailing" id="dpl-26-6Q0"/>
+                                        <constraint firstAttribute="bottom" secondItem="KVt-t8-kAe" secondAttribute="bottom" id="gH7-oq-olT"/>
+                                        <constraint firstItem="KVt-t8-kAe" firstAttribute="leading" secondItem="4o2-gL-YVC" secondAttribute="leading" id="opD-qG-zZc"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="pickerView" destination="dlp-M9-bV7" id="jFL-NC-kkK"/>
+                                    <outlet property="titleLabel" destination="dAb-q8-bkD" id="OuH-d4-sub"/>
+                                    <outlet property="valueLabel" destination="Uy4-Na-QEc" id="yUT-HR-ITk"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

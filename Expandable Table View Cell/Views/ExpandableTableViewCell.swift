@@ -10,6 +10,17 @@ import UIKit
 
 class ExpandableTableViewCell: UITableViewCell {
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
+    
+    @IBOutlet weak var pickerView: UIPickerView! {
+        didSet {
+            pickerView.isHidden = true
+        }
+    }
+    
     // MARK: - View Lifecycle
     
     override func awakeFromNib() {
