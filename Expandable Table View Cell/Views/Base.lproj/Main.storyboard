@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,37 +27,53 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="259.5"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BCf-A4-j19">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sB-Ph-x3D">
-                                                            <rect key="frame" x="20" y="11" width="374" height="24"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2sB-Ph-x3D">
+                                                            <rect key="frame" x="20" y="11" width="374" height="20.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAb-q8-bkD">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="332" height="24"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAb-q8-bkD">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="324" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uy4-Na-QEc">
-                                                                    <rect key="frame" x="332" y="0.0" width="42" height="24"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uy4-Na-QEc">
+                                                                    <rect key="frame" x="332" y="0.0" width="42" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstItem="2sB-Ph-x3D" firstAttribute="trailing" secondItem="BCf-A4-j19" secondAttribute="trailingMargin" id="9gC-6u-YmZ"/>
                                                         <constraint firstItem="2sB-Ph-x3D" firstAttribute="top" secondItem="BCf-A4-j19" secondAttribute="topMargin" id="K4Z-ta-pGP"/>
                                                         <constraint firstAttribute="height" priority="750" constant="43" id="bER-lc-XCg"/>
                                                         <constraint firstItem="2sB-Ph-x3D" firstAttribute="leading" secondItem="BCf-A4-j19" secondAttribute="leadingMargin" id="ikK-oV-WBr"/>
-                                                        <constraint firstItem="2sB-Ph-x3D" firstAttribute="bottom" secondItem="BCf-A4-j19" secondAttribute="bottomMargin" id="kzS-8d-zXt"/>
+                                                        <constraint firstItem="2sB-Ph-x3D" firstAttribute="bottom" secondItem="BCf-A4-j19" secondAttribute="bottomMargin" priority="250" id="kzS-8d-zXt"/>
                                                     </constraints>
                                                 </view>
-                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dlp-M9-bV7">
-                                                    <rect key="frame" x="0.0" y="43" width="414" height="216.5"/>
-                                                </pickerView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDq-sy-SBC" userLabel="Date Picker Wrapper View">
+                                                    <rect key="frame" x="0.0" y="43.5" width="414" height="216"/>
+                                                    <subviews>
+                                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="a1w-s0-FYg">
+                                                            <rect key="frame" x="47" y="0.0" width="320" height="216"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="216" id="zRJ-6Y-Q7j"/>
+                                                            </constraints>
+                                                        </datePicker>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="a1w-s0-FYg" firstAttribute="centerY" secondItem="yDq-sy-SBC" secondAttribute="centerY" id="9zR-ou-Xl6"/>
+                                                        <constraint firstAttribute="height" priority="750" constant="216" id="XCc-GF-JSZ"/>
+                                                        <constraint firstItem="a1w-s0-FYg" firstAttribute="width" secondItem="yDq-sy-SBC" secondAttribute="width" multiplier="0.772947" id="dhx-lw-j1C"/>
+                                                        <constraint firstItem="a1w-s0-FYg" firstAttribute="centerX" secondItem="yDq-sy-SBC" secondAttribute="centerX" id="ecc-fS-iag"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                         </stackView>
                                     </subviews>
@@ -68,7 +85,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="pickerView" destination="dlp-M9-bV7" id="jFL-NC-kkK"/>
+                                    <outlet property="datePickerView" destination="a1w-s0-FYg" id="Q8L-N1-DlJ"/>
+                                    <outlet property="datePickerViewHeight" destination="zRJ-6Y-Q7j" id="3oz-MN-E56"/>
+                                    <outlet property="datePickerWrapperViewHeight" destination="XCc-GF-JSZ" id="QAP-hw-i6J"/>
                                     <outlet property="titleLabel" destination="dAb-q8-bkD" id="OuH-d4-sub"/>
                                     <outlet property="valueLabel" destination="Uy4-Na-QEc" id="yUT-HR-ITk"/>
                                 </connections>

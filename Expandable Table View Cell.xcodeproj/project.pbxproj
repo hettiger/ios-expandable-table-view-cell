@@ -14,6 +14,7 @@
 		5BD1FCDA23BCC96A00E1CBB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD1FCD823BCC96A00E1CBB4 /* LaunchScreen.storyboard */; };
 		5BD1FCE623BCCB3600E1CBB4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCE523BCCB3600E1CBB4 /* TableViewController.swift */; };
 		5BD1FCE823BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCE723BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift */; };
+		5BD1FCED23BCEE0B00E1CBB4 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCEC23BCEE0B00E1CBB4 /* Appointment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5BD1FCDB23BCC96A00E1CBB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BD1FCE523BCCB3600E1CBB4 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		5BD1FCE723BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCell.swift; sourceTree = "<group>"; };
+		5BD1FCEC23BCEE0B00E1CBB4 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		5BD1FCCC23BCC96800E1CBB4 /* Expandable Table View Cell */ = {
 			isa = PBXGroup;
 			children = (
+				5BD1FCE923BCED9A00E1CBB4 /* Models */,
 				5BD1FCE123BCC98800E1CBB4 /* App Delegate */,
 				5BD1FCE423BCC9AD00E1CBB4 /* Assets */,
 				5BD1FCE223BCC99500E1CBB4 /* Controllers */,
@@ -100,6 +103,14 @@
 				5BD1FCDB23BCC96A00E1CBB4 /* Info.plist */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		5BD1FCE923BCED9A00E1CBB4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5BD1FCEC23BCEE0B00E1CBB4 /* Appointment.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +188,7 @@
 				5BD1FCE623BCCB3600E1CBB4 /* TableViewController.swift in Sources */,
 				5BD1FCD023BCC96800E1CBB4 /* SceneDelegate.swift in Sources */,
 				5BD1FCE823BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift in Sources */,
+				5BD1FCED23BCEE0B00E1CBB4 /* Appointment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

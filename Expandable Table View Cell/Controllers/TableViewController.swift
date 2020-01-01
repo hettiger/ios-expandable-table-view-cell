@@ -10,10 +10,16 @@ import UIKit
 
 class TableViewController: UIViewController {
     
+    // MARK: - Types
+    
+    struct Row {
+        var appointment: Appointment
+        var isEditing: Bool
+    }
+    
     // MARK: - Constants
     
     enum Constants {
-        static let numberOfExampleCells = 3
         static let cellIdentifier = "Expandable Cell"
     }
     
@@ -25,10 +31,46 @@ class TableViewController: UIViewController {
       }
     }
     
+    // MARK: - Properties
+    
+    var rows: Array<Row> = [
+        Row(appointment: Appointment(title: "Appointment A", date: .init()), isEditing: false),
+        Row(appointment: Appointment(title: "Appointment B", date: .init()), isEditing: false),
+        Row(appointment: Appointment(title: "Appointment C", date: .init()), isEditing: false),
+    ]
+    
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    // MARK: - Methods
+    
+    func configureCell(_ cell: UITableViewCell, forRow row: Row, animated: Bool) {
+        if let cell = cell as? ExpandableTableViewCell {
+            let animatedConfiguration = {
+                cell.valueLabel.alpha = row.isEditing ? 0 : 1
+                cell.datePickerView.alpha = row.isEditing ? 1 : 0
+                cell.datePickerWrapperViewHeight.constant = row.isEditing ? cell.datePickerViewHeight.constant : 0
+            }
+            
+            cell.datePickerView.isEnabled = row.isEditing
+            cell.titleLabel.attributedText = NSAttributedString(string: row.appointment.title, attributes: [NSAttributedString.Key.foregroundColor : row.isEditing ? UIColor.systemBlue : UIColor.label])
+            cell.valueLabel.text = DateFormatter.localizedString(from: row.appointment.date, dateStyle: .short, timeStyle: .none)
+            cell.datePickerView.setDate(row.appointment.date, animated: false)
+            
+            if animated {
+                UIView.animate(withDuration: CATransaction.animationDuration(), animations: animatedConfiguration)
+            } else {
+                animatedConfiguration()
+            }
+        }
+    }
+    
+    func resizeRows() {
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
 
 }
@@ -38,7 +80,19 @@ class TableViewController: UIViewController {
 
 extension TableViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let activeIndex = rows.firstIndex(where: { $0.isEditing }), activeIndex != indexPath.row {
+            setEditing(false, forRowAtIndexPath: IndexPath(row: activeIndex, section: indexPath.section), animated: true)
+        }
+        setEditing(nil, forRowAtIndexPath: indexPath, animated: true)
+        resizeRows()
+    }
     
+    func setEditing(_ editing: Bool?, forRowAtIndexPath indexPath: IndexPath, animated: Bool) {
+        let cell = tableView.cellForRow(at: indexPath) as! ExpandableTableViewCell
+        rows[indexPath.row].isEditing = editing ?? !rows[indexPath.row].isEditing
+        self.configureCell(cell, forRow: self.rows[indexPath.row], animated: animated)
+    }
     
 }
 
@@ -48,11 +102,14 @@ extension TableViewController: UITableViewDelegate {
 extension TableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Constants.numberOfExampleCells
+        return rows.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath)
+        let row = rows[indexPath.row]
+        configureCell(cell, forRow: row, animated: false)
+        return cell
     }
     
 }

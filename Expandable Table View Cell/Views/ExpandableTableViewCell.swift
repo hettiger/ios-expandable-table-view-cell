@@ -15,9 +15,18 @@ class ExpandableTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     
-    @IBOutlet weak var pickerView: UIPickerView! {
+    @IBOutlet weak var datePickerWrapperViewHeight: NSLayoutConstraint! {
         didSet {
-            pickerView.isHidden = true
+            datePickerWrapperViewHeight.constant = 0
+        }
+    }
+
+    @IBOutlet weak var datePickerViewHeight: NSLayoutConstraint!
+
+    @IBOutlet weak var datePickerView: UIDatePicker! {
+        didSet {
+            datePickerView.isEnabled = false
+            datePickerView.alpha = 0
         }
     }
     
@@ -31,6 +40,7 @@ class ExpandableTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        super.setSelected(false, animated: animated)
     }
 
 }
