@@ -12,7 +12,7 @@
 		5BD1FCD523BCC96800E1CBB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD1FCD323BCC96800E1CBB4 /* Main.storyboard */; };
 		5BD1FCD723BCC96A00E1CBB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD1FCD623BCC96A00E1CBB4 /* Assets.xcassets */; };
 		5BD1FCDA23BCC96A00E1CBB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD1FCD823BCC96A00E1CBB4 /* LaunchScreen.storyboard */; };
-		5BD1FCE623BCCB3600E1CBB4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCE523BCCB3600E1CBB4 /* TableViewController.swift */; };
+		5BD1FCE623BCCB3600E1CBB4 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCE523BCCB3600E1CBB4 /* TodoViewController.swift */; };
 		5BD1FCE823BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCE723BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift */; };
 		5BD1FCED23BCEE0B00E1CBB4 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCEC23BCEE0B00E1CBB4 /* Todo.swift */; };
 		5BD1FCEF23BD2FBF00E1CBB4 /* HairlineConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD1FCEE23BD2FBF00E1CBB4 /* HairlineConstraint.swift */; };
@@ -27,7 +27,7 @@
 		5BD1FCD623BCC96A00E1CBB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BD1FCD923BCC96A00E1CBB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BD1FCDB23BCC96A00E1CBB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5BD1FCE523BCCB3600E1CBB4 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		5BD1FCE523BCCB3600E1CBB4 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		5BD1FCE723BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCell.swift; sourceTree = "<group>"; };
 		5BD1FCEC23BCEE0B00E1CBB4 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		5BD1FCEE23BD2FBF00E1CBB4 /* HairlineConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairlineConstraint.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		5BD1FCE223BCC99500E1CBB4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5BD1FCE523BCCB3600E1CBB4 /* TableViewController.swift */,
+				5BD1FCE523BCCB3600E1CBB4 /* TodoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -191,7 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BD1FCCE23BCC96800E1CBB4 /* AppDelegate.swift in Sources */,
-				5BD1FCE623BCCB3600E1CBB4 /* TableViewController.swift in Sources */,
+				5BD1FCE623BCCB3600E1CBB4 /* TodoViewController.swift in Sources */,
 				5BD1FCD023BCC96800E1CBB4 /* SceneDelegate.swift in Sources */,
 				5BD1FCE823BCCBBC00E1CBB4 /* ExpandableTableViewCell.swift in Sources */,
 				5BD1FCEF23BD2FBF00E1CBB4 /* HairlineConstraint.swift in Sources */,

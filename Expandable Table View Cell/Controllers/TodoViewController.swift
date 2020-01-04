@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  TodoViewController.swift
 //  Expandable Table View Cell
 //
 //  Created by Martin Hettiger on 01.01.20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewController: UIViewController {
+class TodoViewController: UIViewController {
     
     // MARK: - Types
     
@@ -86,7 +86,7 @@ class TableViewController: UIViewController {
 
 // MARK: - UITableViewDelegate
 
-extension TableViewController: UITableViewDelegate {
+extension TodoViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let activeIndex = rows.firstIndex(where: { $0.isEditing }), activeIndex != indexPath.row {
@@ -108,7 +108,7 @@ extension TableViewController: UITableViewDelegate {
 
 // MARK: - UITableViewDataSource
 
-extension TableViewController: UITableViewDataSource {
+extension TodoViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rows.count
