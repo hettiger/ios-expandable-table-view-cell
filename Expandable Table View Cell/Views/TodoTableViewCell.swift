@@ -32,7 +32,7 @@ class TodoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var datePickerView: UIDatePicker! {
         didSet {
-            datePickerView.isEnabled = false
+            datePickerView.isUserInteractionEnabled = false
             datePickerView.alpha = 0
         }
     }
@@ -53,7 +53,7 @@ class TodoTableViewCell: UITableViewCell {
     func update(animated: Bool) {
         guard let todoRow = todoRow else { return }
 
-        datePickerView.isEnabled = todoRow.isEditing
+        datePickerView.isUserInteractionEnabled = todoRow.isEditing
         titleLabel.attributedText = NSAttributedString(
             string: todoRow.todo.title,
             attributes: [NSAttributedString.Key.foregroundColor : todoRow.isEditing ? UIColor.systemBlue : UIColor.label])
