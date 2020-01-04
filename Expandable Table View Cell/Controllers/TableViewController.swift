@@ -13,7 +13,7 @@ class TableViewController: UIViewController {
     // MARK: - Types
     
     struct Row {
-        var appointment: Appointment
+        var todo: Todo
         var isEditing: Bool
     }
     
@@ -33,11 +33,11 @@ class TableViewController: UIViewController {
     
     // MARK: - Properties
     
-    var rows: Array<Row> = [
-        Row(appointment: Appointment(title: "Appointment A", date: .init()), isEditing: false),
-        Row(appointment: Appointment(title: "Appointment B", date: .init()), isEditing: false),
-        Row(appointment: Appointment(title: "Appointment C", date: .init()), isEditing: false),
-    ]
+    var rows: Array<Row> = {
+        Todo.all().map { (todo) -> Row in
+            Row(todo: todo, isEditing: false)
+        }
+    }()
     
     // MARK: - View Lifecycle
 
@@ -57,9 +57,9 @@ class TableViewController: UIViewController {
             }
             
             cell.datePickerView.isEnabled = row.isEditing
-            cell.titleLabel.attributedText = NSAttributedString(string: row.appointment.title, attributes: [NSAttributedString.Key.foregroundColor : row.isEditing ? UIColor.systemBlue : UIColor.label])
-            cell.valueLabel.text = DateFormatter.localizedString(from: row.appointment.date, dateStyle: .short, timeStyle: .none)
-            cell.datePickerView.setDate(row.appointment.date, animated: false)
+            cell.titleLabel.attributedText = NSAttributedString(string: row.todo.title, attributes: [NSAttributedString.Key.foregroundColor : row.isEditing ? UIColor.systemBlue : UIColor.label])
+            cell.valueLabel.text = DateFormatter.localizedString(from: row.todo.dueAt, dateStyle: .short, timeStyle: .none)
+            cell.datePickerView.setDate(row.todo.dueAt, animated: false)
             
             if animated {
                 UIView.animate(withDuration: CATransaction.animationDuration(), animations: animatedConfiguration)

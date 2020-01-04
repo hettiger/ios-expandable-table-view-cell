@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Appointment {
+struct Todo {
     var title: String
-    var date: Date
+    var dueAt: Date
 }
