@@ -20,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5BC9076523C12F0100283241 /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
+		5BC9076723C12F1900283241 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5BD1FCCA23BCC96800E1CBB4 /* Expandable Table View Cell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expandable Table View Cell.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD1FCCD23BCC96800E1CBB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BD1FCCF23BCC96800E1CBB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,8 @@
 			children = (
 				5BD1FCCC23BCC96800E1CBB4 /* Expandable Table View Cell */,
 				5BD1FCCB23BCC96800E1CBB4 /* Products */,
+				5BC9076523C12F0100283241 /* demo.gif */,
+				5BC9076723C12F1900283241 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
