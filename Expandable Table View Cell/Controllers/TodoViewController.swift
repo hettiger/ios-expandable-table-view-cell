@@ -10,20 +10,6 @@ import UIKit
 
 class TodoViewController: UIViewController {
     
-    // MARK: - Types
-    
-    class Row {
-        
-        var todo: Todo
-
-        var isEditing = false
-        
-        init(todo: Todo) {
-            self.todo = todo
-        }
-        
-    }
-    
     // MARK: - Constants
     
     enum Constants {
@@ -40,45 +26,13 @@ class TodoViewController: UIViewController {
     
     // MARK: - Properties
     
-    var rows: Array<Row> = {
-        Todo.all().map { (todo) -> Row in
-            Row(todo: todo)
-        }
-    }()
-    
-    // MARK: - View Lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    var todoRows = TodoRow.all()
     
     // MARK: - Methods
     
-    func configureCell(_ cell: UITableViewCell, forRow row: Row, animated: Bool) {
-        if let cell = cell as? TodoTableViewCell {
-            let animatedConfiguration = {
-                cell.valueLabel.alpha = row.isEditing ? 0 : 1
-                cell.separatorView.alpha = row.isEditing ? 1 : 0
-                cell.datePickerView.alpha = row.isEditing ? 1 : 0
-                cell.datePickerWrapperViewHeight.constant = row.isEditing ? cell.datePickerViewHeight.constant : 0
-            }
-            
-            cell.datePickerView.isEnabled = row.isEditing
-            cell.titleLabel.attributedText = NSAttributedString(string: row.todo.title, attributes: [NSAttributedString.Key.foregroundColor : row.isEditing ? UIColor.systemBlue : UIColor.label])
-            cell.valueLabel.text = DateFormatter.localizedString(from: row.todo.dueAt, dateStyle: .short, timeStyle: .none)
-            cell.datePickerView.setDate(row.todo.dueAt, animated: false)
-            
-            if animated {
-                UIView.animate(withDuration: CATransaction.animationDuration(), animations: animatedConfiguration)
-            } else {
-                animatedConfiguration()
-            }
-        }
-    }
-    
     func resizeRows() {
-        tableView.beginUpdates()
-        tableView.endUpdates()
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
     }
 
 }
@@ -89,18 +43,14 @@ class TodoViewController: UIViewController {
 extension TodoViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let activeIndex = rows.firstIndex(where: { $0.isEditing }), activeIndex != indexPath.row {
-            setEditing(false, forRowAtIndexPath: IndexPath(row: activeIndex, section: indexPath.section), animated: true)
+        let todoRow = todoRows[indexPath.row]
+        
+        if let activeRow = todoRows.first(where: { $0.isEditing }), activeRow !== todoRow {
+            activeRow.isEditing = false
         }
-        setEditing(nil, forRowAtIndexPath: indexPath, animated: true)
+        
+        todoRow.isEditing.toggle()
         resizeRows()
-    }
-    
-    func setEditing(_ editing: Bool?, forRowAtIndexPath indexPath: IndexPath, animated: Bool) {
-        let cell = tableView.cellForRow(at: indexPath) as! TodoTableViewCell
-        let row = rows[indexPath.row]
-        row.isEditing = editing ?? !row.isEditing
-        configureCell(cell, forRow: row, animated: animated)
     }
     
 }
@@ -111,13 +61,17 @@ extension TodoViewController: UITableViewDelegate {
 extension TodoViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rows.count
+        return todoRows.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath)
-        let row = rows[indexPath.row]
-        configureCell(cell, forRow: row, animated: false)
+        let todoRow = todoRows[indexPath.row]
+        
+        if let cell = cell as? TodoTableViewCell {
+            cell.todoRow = todoRow
+        }
+
         return cell
     }
     

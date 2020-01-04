@@ -13,6 +13,7 @@ class TodoTableViewCell: UITableViewCell {
     // MARK: - Outlets
     
     @IBOutlet weak var titleLabel: UILabel!
+
     @IBOutlet weak var valueLabel: UILabel!
     
     @IBOutlet weak var datePickerWrapperViewHeight: NSLayoutConstraint! {
@@ -36,10 +37,41 @@ class TodoTableViewCell: UITableViewCell {
         }
     }
     
-    // MARK: - View Lifecycle
+    // MARK: - Properties
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    var todoRow: TodoRow? = nil {
+        didSet {
+            guard let todoRow = todoRow else { return }
+            
+            todoRow.delegate = self
+            update(animated: false)
+        }
+    }
+    
+    // MARK: - Methods
+    
+    func update(animated: Bool) {
+        guard let todoRow = todoRow else { return }
+
+        datePickerView.isEnabled = todoRow.isEditing
+        titleLabel.attributedText = NSAttributedString(
+            string: todoRow.todo.title,
+            attributes: [NSAttributedString.Key.foregroundColor : todoRow.isEditing ? UIColor.systemBlue : UIColor.label])
+        valueLabel.text = DateFormatter.localizedString(from: todoRow.todo.dueAt, dateStyle: .short, timeStyle: .none)
+        datePickerView.setDate(todoRow.todo.dueAt, animated: false)
+        
+        let animations = { [unowned self] in
+            self.valueLabel.alpha = todoRow.isEditing ? 0 : 1
+            self.separatorView.alpha = todoRow.isEditing ? 1 : 0
+            self.datePickerView.alpha = todoRow.isEditing ? 1 : 0
+            self.datePickerWrapperViewHeight.constant = todoRow.isEditing ? self.datePickerViewHeight.constant : 0
+        }
+        
+        if animated {
+            UIView.animate(withDuration: CATransaction.animationDuration(), animations: animations)
+        } else {
+            animations()
+        }
     }
 
     // MARK: - UITableViewCell
@@ -49,4 +81,15 @@ class TodoTableViewCell: UITableViewCell {
         super.setSelected(false, animated: animated)
     }
 
+}
+
+
+// MARK: - TodoRowDelegate
+
+extension TodoTableViewCell: TodoRowDelegate {
+    
+    func todoRow(_ todoRow: TodoRow, didChangeIsEditingTo isEditing: Bool) {
+        update(animated: true)
+    }
+    
 }
