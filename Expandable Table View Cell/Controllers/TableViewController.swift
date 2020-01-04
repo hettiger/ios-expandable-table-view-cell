@@ -12,9 +12,16 @@ class TableViewController: UIViewController {
     
     // MARK: - Types
     
-    struct Row {
+    class Row {
+        
         var todo: Todo
-        var isEditing: Bool
+
+        var isEditing = false
+        
+        init(todo: Todo) {
+            self.todo = todo
+        }
+        
     }
     
     // MARK: - Constants
@@ -35,7 +42,7 @@ class TableViewController: UIViewController {
     
     var rows: Array<Row> = {
         Todo.all().map { (todo) -> Row in
-            Row(todo: todo, isEditing: false)
+            Row(todo: todo)
         }
     }()
     
@@ -91,8 +98,9 @@ extension TableViewController: UITableViewDelegate {
     
     func setEditing(_ editing: Bool?, forRowAtIndexPath indexPath: IndexPath, animated: Bool) {
         let cell = tableView.cellForRow(at: indexPath) as! ExpandableTableViewCell
-        rows[indexPath.row].isEditing = editing ?? !rows[indexPath.row].isEditing
-        self.configureCell(cell, forRow: self.rows[indexPath.row], animated: animated)
+        let row = rows[indexPath.row]
+        row.isEditing = editing ?? !row.isEditing
+        configureCell(cell, forRow: row, animated: animated)
     }
     
 }
