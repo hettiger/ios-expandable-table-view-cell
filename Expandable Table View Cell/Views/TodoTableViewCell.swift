@@ -73,6 +73,12 @@ class TodoTableViewCell: UITableViewCell {
             animations()
         }
     }
+    
+    // MARK: - Actions
+    
+    @IBAction func datePickerViewValueChanged() {
+        todoRow?.todo.dueAt = datePickerView.date
+    }
 
     // MARK: - UITableViewCell
     
