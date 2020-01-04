@@ -1,5 +1,5 @@
 //
-//  ExpandableTableViewCell.swift
+//  TodoTableViewCell.swift
 //  Expandable Table View Cell
 //
 //  Created by Martin Hettiger on 01.01.20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExpandableTableViewCell: UITableViewCell {
+class TodoTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
     

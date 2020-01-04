@@ -27,7 +27,7 @@ class TodoViewController: UIViewController {
     // MARK: - Constants
     
     enum Constants {
-        static let cellIdentifier = "Expandable Cell"
+        static let cellIdentifier = "Todo Cell"
     }
     
     // MARK: - Outlets
@@ -55,7 +55,7 @@ class TodoViewController: UIViewController {
     // MARK: - Methods
     
     func configureCell(_ cell: UITableViewCell, forRow row: Row, animated: Bool) {
-        if let cell = cell as? ExpandableTableViewCell {
+        if let cell = cell as? TodoTableViewCell {
             let animatedConfiguration = {
                 cell.valueLabel.alpha = row.isEditing ? 0 : 1
                 cell.separatorView.alpha = row.isEditing ? 1 : 0
@@ -97,7 +97,7 @@ extension TodoViewController: UITableViewDelegate {
     }
     
     func setEditing(_ editing: Bool?, forRowAtIndexPath indexPath: IndexPath, animated: Bool) {
-        let cell = tableView.cellForRow(at: indexPath) as! ExpandableTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as! TodoTableViewCell
         let row = rows[indexPath.row]
         row.isEditing = editing ?? !row.isEditing
         configureCell(cell, forRow: row, animated: animated)

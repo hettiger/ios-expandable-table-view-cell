@@ -7,16 +7,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Todo Scene-->
+        <!--Todo View-->
         <scene sceneID="1yL-an-KXn">
             <objects>
-                <tableViewController id="zzj-cm-ks0" userLabel="Todo Scene" customClass="TodoViewController" customModule="Expandable_Table_View_Cell" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="zzj-cm-ks0" userLabel="Todo View" customClass="TodoViewController" customModule="Expandable_Table_View_Cell" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fiM-Y2-ExI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Expandable Cell" id="g4F-uf-yEW" customClass="ExpandableTableViewCell" customModule="Expandable_Table_View_Cell" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Todo Cell" id="g4F-uf-yEW" customClass="TodoTableViewCell" customModule="Expandable_Table_View_Cell" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="259.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g4F-uf-yEW" id="4o2-gL-YVC">
@@ -109,7 +109,7 @@
                             <outlet property="delegate" destination="zzj-cm-ks0" id="vuB-BQ-XVz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Expandable Table View Cell" id="GJT-pZ-pkC"/>
+                    <navigationItem key="navigationItem" title="Expandable Todos" id="GJT-pZ-pkC"/>
                     <connections>
                         <outlet property="tableView" destination="fiM-Y2-ExI" id="AuL-Ja-YDq"/>
                     </connections>
