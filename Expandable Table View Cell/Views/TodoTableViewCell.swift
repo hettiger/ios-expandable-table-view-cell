@@ -39,7 +39,7 @@ class TodoTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
-    var todoRow: TodoRow? = nil {
+    weak var todoRow: TodoRow? {
         didSet {
             guard let todoRow = todoRow else { return }
             
